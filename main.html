@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Istanbul, Turkiye - Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Global Header -->
+    <header>
+        <img id="logo" src="logo.png" alt="logo">
+        <h2>Istanbul, Turkiye</h2>
+        <nav>
+            <ul>
+                <li><a href="index.html">Food-Elena</a></li>
+                <li><a href="news.html">News & Events-Alua</a></li>
+                <li><a href="history.html">History-Delfin</a></li>
+                <li><a href="sightseeing.html">Sightseeing-together</a></li>
+                <li><a href="services.html">Services-Elena</a></li>
+                <li><a href="contact.html">Contact-Delfin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section with Fullscreen Image Gallery -->
+    <main>
+        <h1>Welcome to Istanbul!</h1>
+        <div class="image-container">
+            <button class="nav-button" id="prevBtn" onclick="prevImage()">&#10094;</button>
+            <img id="image" src="image1.jpg" alt="Image" />
+            <button class="nav-button" id="nextBtn" onclick="nextImage()">&#10095;</button>
+        </div>
+    </main>
+
+
+
+    
+    <!-- Global Footer -->
+    <footer>
+        <p>&copy; 2024 Imaginary Town | Contact: info@imaginarytown.com</p>
+        <p>Address: 123 Main Street, Imaginary Town</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
