@@ -14,32 +14,145 @@
 
     <!-- Global Header -->
     <header>
-        <img id="logo" src="logo.png" alt="logo">
+        <a href="main.html">
+            <img id="logo" src="img/logo.png" alt="logo">
+        </a>
         <h2>Istanbul, Turkiye</h2>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
+            <ul id="nav-list">
                 <li><a href="news.html">News & Events</a></li>
                 <li><a href="history.html">History</a></li>
                 <li><a href="sightseeing.html">Sightseeing</a></li>
+                <li><a href="cousine.html">Cousine</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
+        <!-- Hamburger Icon -->
+        <div id="hamburger" class="hamburger">&#9776;</div>
     </header>
+    
 
     <!-- Main Content Section with Fullscreen Image Gallery -->
     <main>
-        <h1>Welcome to Istanbul!</h1>
-        <div class="image-container">
+
+        <div class="hero">
+            <h1>Welcome to Istanbul</h1>
+            <p class="hero-tagline">Experience the crossroads of East and West.</p>
+            <div class="buttons">
+                <a href="sightseeing.html" class="btn">Discover Attractions</a>
+                <a href="services.html" class="btn">Plan Your Visit</a>
+            </div>
+        </div>
+
+        <div class="image-gallery">
             <button class="nav-button" id="prevBtn" onclick="prevImage()">&#10094;</button>
-            <img id="image" src="image1.jpg" alt="Image" />
+            <img id="image" src="img/image1.jpg" alt="Image" />
             <button class="nav-button" id="nextBtn" onclick="nextImage()">&#10095;</button>
         </div>
+
+        <!-- Destinations Section -->
+        <section id="dest_wrap" class="destinations">
+            <h2 class="section-title">Top Attractions in Istanbul</h2>
+            <p class="tagline">Discover the wonders of Istanbul, where history, culture, and architecture blend beautifully.</p>
+            <div class="dest-container">
+                <div class="dest-card">
+                    <div class="img-wrapper">
+                        <img src="img/hagia.jpg" alt="Hagia Sophia">
+                        <div class="overlay">
+                            <h3>Hagia Sophia</h3>
+                            <p>Experience the architectural marvel that spans centuries.</p>
+                            <button class="learn-more">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <div class="img-wrapper">
+                        <img src="img/blue.jpg" alt="Blue Mosque">
+                        <div class="overlay">
+                            <h3>Blue Mosque</h3>
+                            <p>A stunning example of Ottoman architecture.</p>
+                            <button class="learn-more">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <div class="img-wrapper">
+                        <img src="img/topkapi.jpg" alt="Topkapi Palace">
+                        <div class="overlay">
+                            <h3>Topkapi Palace</h3>
+                            <p>Explore the rich history of the Ottoman Empire.</p>
+                            <button class="learn-more">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <div class="img-wrapper">
+                        <img src="img/basilica.jpg" alt="Basilica Cistern">
+                        <div class="overlay">
+                            <h3>Basilica Cistern</h3>
+                            <p>A fascinating underground structure that showcases Istanbul’s ancient water system.</p>
+                            <button class="learn-more">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <div class="img-wrapper">
+                        <img src="img/galata.jpg" alt="Galata Tower">
+                        <div class="overlay">
+                            <h3>Galata Tower</h3>
+                            <p>A historical tower offering panoramic views of Istanbul’s skyline and the Bosphorus.</p>
+                            <button class="learn-more">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <div class="img-wrapper">
+                        <img src="img/bazaar.jpg" alt="Grand Bazaar">
+                        <div class="overlay">
+                            <h3>Grand Bazaar</h3>
+                            <p>One of the world’s oldest and largest covered markets, offering a truly immersive shopping experience.</p>
+                            <button class="learn-more">Learn More</button>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+            <div class="buttons">
+                <a href="sightseeing.html" class="btn">See More Attractions</a>
+            </div>
+        </section>
+
+
+
+        <section id="events" class="events-preview">
+            <h2>What's Happening in Istanbul</h2>
+            <div class="events-grid">
+                <!-- Event 1 -->
+                <div class="event">
+                    <h3>International Film Festival</h3>
+                    <p>April 15 - April 22, 2024</p>
+                    <p>Discover the best of international and Turkish cinema.</p>
+                </div>
+                <!-- Event 2 -->
+                <div class="event">
+                    <h3>Grand Bazaar Night Market</h3>
+                    <p>Every Friday, 7 PM - Midnight</p>
+                    <p>Shop unique souvenirs and enjoy local delicacies.</p>
+                </div>
+                <!-- Event 3 -->
+                <div class="event">
+                    <h3>Bosphorus Music Festival</h3>
+                    <p>June 5 - June 7, 2024</p>
+                    <p>Enjoy live performances with stunning Bosphorus views.</p>
+                </div>
+            </div>
+            <div class="events-button">
+                <a href="news.html" class="btn">See All Events</a>
+            </div>
+        </section>
+        
     </main>
-
-
-
+    
     
     <!-- Global Footer -->
     <footer>

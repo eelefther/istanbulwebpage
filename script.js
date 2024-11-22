@@ -1,4 +1,4 @@
-let images = ['image1.jpg', 'image2.jpg', 'image3.jpg','image4.jpg','image5.jpg','image6.jpg'];
+let images = ['img/image1.jpg', 'img/image2.jpg', 'img/image3.jpg','img/image4.jpg','img/image5.jpg','img/image6.jpg'];
 let currentIndex = 0;
 
 function showImage(index) {
@@ -21,3 +21,12 @@ function nextImage() {
     showImage(currentIndex);
 }
 
+images.forEach((src) => {
+    const img = new Image();
+    img.src = src;
+});
+
+// JavaScript to toggle the menu visibility on mobile
+document.getElementById('hamburger').addEventListener('click', function() {
+    document.getElementById('nav-list').classList.toggle('show');
+});

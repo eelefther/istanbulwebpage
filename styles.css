@@ -10,9 +10,10 @@ body {
     line-height: 1.6;
     background-color: #f4f4f9;
     color: #333;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
+/* Header - Fixed at the top */
 header {
     background: linear-gradient(to bottom, #bb2719, rgba(204, 0, 0, 0)); 
     color: #fff;
@@ -20,29 +21,41 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
+    position: fixed;  /* Fix the header at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
     z-index: 10;
+    flex-wrap: wrap; /* Allow flex items to wrap */
 }
 
 #logo {
-    height: 100px; /* Adjust as needed */
-    width: auto; /* Maintain aspect ratio */
-    margin-right: 10px; /* Closer margin to the text */
+    height: 100px;
+    width: auto;
+    margin-right: 10px;
 }
 
 header h2 {
-    margin-left: 15px; /* Adjust the margin as needed */
+    margin-left: 0;
+    font-family: 'Eagle Lake', serif;
+    font-size: 2rem;
 }
 
+/* Navigation - Adjust for smaller screens */
 nav {
-    margin-left: auto;
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap; /* Allow navigation to wrap */
 }
 
+/* Ensure the nav ul takes up all the space and wraps on small screens */
 nav ul {
     display: flex;
     justify-content: flex-end;
     list-style-type: none;
     margin: 0;
+    padding: 0;
 }
 
 nav ul li {
@@ -59,79 +72,370 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-main h1 {
-    color: #bb2719;
-    font-family: "Eagle Lake", serif;
-    font-weight: 600;
-    font-size: 3rem; /* Adjust size as needed */
-    text-align: center;
+/* Responsive Design - For smaller screens */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack logo and h2 vertically */
+        align-items: center; /* Center items horizontally */
+        padding: 1rem; /* Adjust padding */
+    }
+
+    nav {
+        width: 100%; /* Take full width */
+        justify-content: center; /* Center the nav items */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+        width: 100%; /* Full width of the screen */
+        align-items: center; /* Center the list items */
+    }
+
+    nav ul li {
+        margin: 0.5rem 0; /* Space out the nav items */
+    }
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none; /* Hidden by default */
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Display hamburger on small screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show hamburger icon */
+    }
+
+    nav ul {
+        display: none; /* Hide nav items by default */
+        flex-direction: column; /* Stack items vertically */
+        width: 100%;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    nav ul.show {
+        display: flex; /* Show nav items when the menu is toggled */
+    }
+
+    nav ul li {
+        margin: 0.5rem 0; /* Space out nav items */
+    }
+}
+
+/* Hero Section - Positioned on top of the Image Container */
+/* Hero Section */
+.hero {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1; /* Ensures it's above the images */
-    background-color: rgba(231, 213, 213, 0.7); /* Light background with transparency */
-    padding: 5px 20px; /* Adds some space around the text */
-    border-radius: 10px; /* Optional: adds rounded corners */
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    padding: 20px 40px;
+    border-radius: 10px;
+    max-width: 100%;   /* Prevent the hero from overflowing horizontally */
+    box-sizing: border-box;
 }
 
-/* Fullscreen Image Gallery */
-.image-container {
+.hero h1 {
+    font-size: 3rem;
+    font-family: "Eagle Lake", serif;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-tagline {
+    font-size: 1.5rem; /* Slightly smaller than h1 */
+    font-family: Arial, sans-serif; /* Simpler font for contrast */
+    margin-bottom: 2rem;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.buttons {
     display: flex;
-    align-items: center;
     justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
+    gap: 1rem;
 }
 
-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.buttons .btn {
+    background-color: #bb2719;
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
 }
 
+.buttons .btn:hover {
+    background-color: #a30000;
+}
+
+
+/* Ensure image gallery section is positioned correctly */
+/* Fullscreen Image Gallery */
+.image-gallery {
+    position: relative;  /* Positioning relative to its parent */
+    width: 100vw;        /* Full viewport width */
+    height: 100vh;       /* Full viewport height */
+    overflow: hidden;    /* Prevent overflow */
+}
+
+/* Image styling for full-screen behavior */
+.image-gallery img {
+    width: 100%;            /* Ensure the image spans the full width */
+    height: 100%;           /* Ensure the image spans the full height */
+    object-fit: cover;      /* Ensure the image covers the container area */
+    object-position: center; /* Center the image within the container */
+}
+
+/* Navigation buttons (Prev/Next) */
+/* Nav Buttons (prev and next) */
 .nav-button {
     background-color: #bb2719;
     color: white;
     border: none;
-    padding: 15px; /* Adjust padding to make the buttons circular */
-    font-size: 24px;
+    font-size: 30px; /* Increase font size for better centering */
     cursor: pointer;
-    border-radius: 50%; /* Makes the button circular */
-    width: 50px; /* Define a width */
-    height: 50px; /* Define a height */
+    border-radius: 50%;
+    width: 60px;   /* Adjust button size to ensure symbols are centered */
+    height: 60px;  /* Same height as width for a perfect circle */
     transition: background-color 0.3s ease;
     position: absolute;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;          /* Flexbox for centering */
+    justify-content: center; /* Horizontally center the content */
+    align-items: center;    /* Vertically center the content */
+    z-index: 2;
 }
 
 #prevBtn {
-    left: 20px;
+    left: 20px;  /* Position the previous button to the left */
 }
 
 #nextBtn {
-    right: 20px;
+    right: 20px; /* Position the next button to the right */
 }
 
+/* Hover effect for buttons */
 .nav-button:hover {
     background-color: #a30000; /* Darker red on hover */
 }
 
-/* Footer - Fixed at the bottom of the viewport */
+.tagline {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+
+.events-preview {
+    padding: 2rem 1rem;
+    background-color: #f4f4f9;
+    text-align: center;
+}
+
+.events-preview h2 {
+    font-size: 2.5rem;
+    color: #bb2719;
+    margin-bottom: 1.5rem;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.event {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.event h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.event p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0.5rem 0;
+}
+
+.events-button {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.events-button .btn {
+    background-color: #bb2719;
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.events-button .btn:hover {
+    background-color: #a30000;
+}
+
+/* Destinations Section */
+.destinations {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.destinations .section-title {
+    font-size: 2.5em;
+    color: #333;
+}
+
+.dest-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.dest-card {
+    position: relative;
+    flex-basis: calc(33.33% - 20px);
+    overflow: hidden;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+/* Adjusting size of images */
+.img-wrapper {
+    width: 100%; /* Full width of the card */
+    height: 250px; /* Adjust this value to change the image height */
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+
+/* Image scaling */
+.img-wrapper img {
+    width: 100%; /* Ensures image stretches to fit the container width */
+    height: 100%; /* Ensures image stretches to fit the container height */
+    object-fit: cover; /* Maintains aspect ratio and crops image */
+    transition: transform 0.3s ease;
+}
+
+.img-wrapper:hover img {
+    transform: scale(1.1); /* Zoom-in effect */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.img-wrapper:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+.overlay p {
+    margin: 10px 20px;
+    text-align: center;
+    font-size: 1em;
+}
+
+.learn-more {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #bb2719;
+    border: none;
+    color: white;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.learn-more:hover {
+    background-color: #a30000;
+}
+
+/* Media query for larger screens */
+@media (min-width: 1200px) {
+    .dest-container {
+        padding: 0 50px;
+    }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .dest-card {
+        flex-basis: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .dest-card {
+        flex-basis: 100%;
+    }
+}
+
+.destinations .buttons {
+    margin-top: 30px;
+    text-align: center; /* Center the button */
+}
+
+
+/* Footer */
 footer {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 1rem;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 1;
 }
