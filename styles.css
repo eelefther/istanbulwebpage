@@ -243,7 +243,7 @@ nav ul li a:hover {
 
 .events-preview {
     padding: 2rem 1rem;
-    background-color: #f4f4f9;
+    background-color: #f9f9f9;
     text-align: center;
 }
 
@@ -427,7 +427,118 @@ nav ul li a:hover {
     text-align: center; /* Center the button */
 }
 
+/* START NEXT HOLIDAY */
+.next-holiday {;
+    height: 204px;
+    width: 100%;
+    background: no-repeat center / cover
+      url(img/bridge.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .next-holiday > * {
+    width: 32%;
+  }
+  .next-holiday__text-wrap {
+    font-size: 46px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 1;
+  }
+  .next-holiday__text-2 {
+    display: inline;
+  }
+  .next-holiday__btn-wrap {
+    text-align: center;
+  }
+  .next-holiday__btn {
+    color: rgba(247, 101, 112, 0.95);
+    background-color: #fff;
+    padding: 8px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  /* END NEXT HOLIDAY */
 
+  * START DISCOVER */
+  .discover__container {
+    margin: 60px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .discover__img-1 {
+    background: no-repeat center / cover
+      url(https://i.pinimg.com/564x/d6/62/c1/d662c1c1725a7d182c1712d9f1ee106c.jpg);
+  }
+  .discover__img-2 {
+    background: no-repeat center / cover
+      url(https://i.pinimg.com/564x/ac/e5/ed/ace5ed785beb820ccbf5f202bf5bf3f7.jpg);
+  }
+  .discover__item {
+    flex: 1;
+    height: 248px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+  }
+  .discover__item p {
+    font-size: 13px;
+    color: #fff;
+  }
+  .discover__item h4 {
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .discover__item a {
+    text-decoration: none;
+    padding: 8px 36px 6px;
+    background-color: #fff;
+    border-radius: 30px;
+    font-size: 14px;
+  }
+  .discover__btn-1 {
+    color: #f3a46b;
+  }
+  .discover__btn-2 {
+    color: #1bbc9b;
+  }
+  /* END DISCOVER */
+
+  /* TOURS */
+.tours__container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  /* Tour list */
+  .tours__list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 80px;
+  }
+  .tours__item {
+    width: 30%;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .tours__item img {
+    width: 46px;
+    height: 46px;
+    margin-right: 12px;
+  }
+  
+  /* END TOURS */
 /* Footer */
 footer {
     background-color: #333;
