@@ -1,14 +1,15 @@
-/* Reset basic styling */
-* {
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: inherit;
 }
 
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f9;
     color: #333;
     overflow-x: hidden;
 }
@@ -128,9 +129,8 @@ nav ul li a:hover {
     }
 }
 
-/* Hero Section - Positioned on top of the Image Container */
-/* Hero Section */
-.hero {
+
+.gallery-title {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -145,14 +145,14 @@ nav ul li a:hover {
     box-sizing: border-box;
 }
 
-.hero h1 {
+.gallery-title h1 {
     font-size: 3rem;
     font-family: "Eagle Lake", serif;
     margin-bottom: 0.5rem;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-.hero-tagline {
+.gallery-tagline {
     font-size: 1.5rem; /* Slightly smaller than h1 */
     font-family: Arial, sans-serif; /* Simpler font for contrast */
     margin-bottom: 2rem;
@@ -179,12 +179,13 @@ nav ul li a:hover {
 
 .buttons .btn:hover {
     background-color: #a30000;
+    transform: scale(1.05)
 }
 
 
 /* Ensure image gallery section is positioned correctly */
 /* Fullscreen Image Gallery */
-.image-gallery {
+.gallery {
     position: relative;  /* Positioning relative to its parent */
     width: 100vw;        /* Full viewport width */
     height: 100vh;       /* Full viewport height */
@@ -192,7 +193,7 @@ nav ul li a:hover {
 }
 
 /* Image styling for full-screen behavior */
-.image-gallery img {
+.gallery img {
     width: 100%;            /* Ensure the image spans the full width */
     height: 100%;           /* Ensure the image spans the full height */
     object-fit: cover;      /* Ensure the image covers the container area */
@@ -230,7 +231,7 @@ nav ul li a:hover {
 
 /* Hover effect for buttons */
 .nav-button:hover {
-    background-color: #a30000; /* Darker red on hover */
+    background-color: #a30000;
 }
 
 .tagline {
@@ -241,13 +242,13 @@ nav ul li a:hover {
 }
 
 
-.events-preview {
+#events {
     padding: 2rem 1rem;
     background-color: #f9f9f9;
     text-align: center;
 }
 
-.events-preview h2 {
+.events-title {
     font-size: 2.5rem;
     color: #bb2719;
     margin-bottom: 1.5rem;
@@ -285,13 +286,12 @@ nav ul li a:hover {
     color: #555;
     margin: 0.5rem 0;
 }
-
-.events-button {
+.events-btn {
     text-align: center;
     margin-top: 1.5rem;
 }
 
-.events-button .btn {
+.events-btn #btn {
     background-color: #bb2719;
     color: white;
     text-decoration: none;
@@ -299,26 +299,29 @@ nav ul li a:hover {
     border-radius: 5px;
     font-weight: bold;
     font-size: 1.2rem;
-    transition: background-color 0.3s ease;
+    display: inline-block; /* Make the link behave like a block element */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition for transform */
 }
 
-.events-button .btn:hover {
+.events-btn #btn:hover {
     background-color: #a30000;
+    transform: scale(1.05); /* Slight zoom effect on hover */
 }
+
 
 /* Destinations Section */
-.destinations {
+#sightseeing {
     padding: 50px 20px;
     background-color: #f9f9f9;
     text-align: center;
 }
 
-.destinations .section-title {
+#sightseeing .sightseeing-title {
     font-size: 2.5em;
     color: #333;
 }
 
-.dest-container {
+.sightseeing-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -326,7 +329,7 @@ nav ul li a:hover {
     padding: 0 20px;
 }
 
-.dest-card {
+.sightseeing-card {
     position: relative;
     flex-basis: calc(33.33% - 20px);
     overflow: hidden;
@@ -335,23 +338,24 @@ nav ul li a:hover {
 }
 
 /* Adjusting size of images */
-.img-wrapper {
+.sightseeing-image{
     width: 100%; /* Full width of the card */
     height: 250px; /* Adjust this value to change the image height */
     overflow: hidden;
     position: relative;
     border-radius: 10px;
-}
+}   
 
 /* Image scaling */
-.img-wrapper img {
+.sightseeing-image img {
     width: 100%; /* Ensures image stretches to fit the container width */
     height: 100%; /* Ensures image stretches to fit the container height */
     object-fit: cover; /* Maintains aspect ratio and crops image */
     transition: transform 0.3s ease;
 }
 
-.img-wrapper:hover img {
+
+.sightseeing-image:hover img {
     transform: scale(1.1); /* Zoom-in effect */
 }
 
@@ -371,7 +375,7 @@ nav ul li a:hover {
     transition: opacity 0.3s ease;
 }
 
-.img-wrapper:hover .overlay {
+.sightseeing-image:hover .overlay {
     opacity: 1;
 }
 
@@ -386,7 +390,7 @@ nav ul li a:hover {
     font-size: 1em;
 }
 
-.learn-more {
+.sightseeing-btn {
     margin-top: 15px;
     padding: 10px 20px;
     background-color: #bb2719;
@@ -398,87 +402,59 @@ nav ul li a:hover {
     transition: background-color 0.3s ease;
 }
 
-.learn-more:hover {
+.sightseeing-btn:hover {
     background-color: #a30000;
+    transform: scale(1.05)
 }
 
 /* Media query for larger screens */
 @media (min-width: 1200px) {
-    .dest-container {
+    .sightseeing-container {
         padding: 0 50px;
     }
 }
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
-    .dest-card {
+    .sightseeing-card {
         flex-basis: calc(50% - 20px);
     }
 }
 
 @media (max-width: 480px) {
-    .dest-card {
+    .sightseeing-card {
         flex-basis: 100%;
     }
 }
 
-.destinations .buttons {
+#sightseeing .buttons {
     margin-top: 30px;
     text-align: center; /* Center the button */
 }
 
-/* START NEXT HOLIDAY */
-.next-holiday {;
-    height: 204px;
+
+.img-divider {
+    height: 250px;
     width: 100%;
     background: no-repeat center / cover
       url(img/bridge.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .next-holiday > * {
-    width: 32%;
-  }
-  .next-holiday__text-wrap {
-    font-size: 46px;
-    font-weight: bold;
-    color: #fff;
-    line-height: 1;
-  }
-  .next-holiday__text-2 {
-    display: inline;
-  }
-  .next-holiday__btn-wrap {
-    text-align: center;
-  }
-  .next-holiday__btn {
-    color: rgba(247, 101, 112, 0.95);
-    background-color: #fff;
-    padding: 8px 40px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  /* END NEXT HOLIDAY */
+}
 
-  * START DISCOVER */
-  .discover__container {
-    margin: 60px 0;
+  #cousine {
+    margin: 0;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .discover__img-1 {
+  .cousine-image {
     background: no-repeat center / cover
-      url(https://i.pinimg.com/564x/d6/62/c1/d662c1c1725a7d182c1712d9f1ee106c.jpg);
+      url(img/cousine.png);
   }
-  .discover__img-2 {
-    background: no-repeat center / cover
-      url(https://i.pinimg.com/564x/ac/e5/ed/ace5ed785beb820ccbf5f202bf5bf3f7.jpg);
-  }
-  .discover__item {
+  .cousine-item {
     flex: 1;
     height: 248px;
     display: flex;
@@ -487,66 +463,145 @@ nav ul li a:hover {
     align-items: center;
     letter-spacing: 1px;
   }
-  .discover__item p {
-    font-size: 13px;
+  .cousine-item h4 {
+    font-size: 36px;
     color: #fff;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Add text shadow for readability */
+    padding: 10px 15px;
   }
-  .discover__item h4 {
-    font-size: 32px;
-    color: #fff;
-    margin-bottom: 20px;
-  }
-  .discover__item a {
+
+  .cousine-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #bb2719;
+    border: none;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
     text-decoration: none;
-    padding: 8px 36px 6px;
-    background-color: #fff;
-    border-radius: 30px;
-    font-size: 14px;
-  }
-  .discover__btn-1 {
-    color: #f3a46b;
-  }
-  .discover__btn-2 {
-    color: #1bbc9b;
-  }
+}
+
+.cousine-btn:hover {
+    background-color: #a30000; /* Darker color on hover */
+    transform: scale(1.05); /* Slight zoom-in effect on hover */
+}
+
   /* END DISCOVER */
 
-  /* TOURS */
-.tours__container {
-    width: 80%;
+  /* Reviews Section */
+#reviews {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.reviews-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
-  }
-  /* Tour list */
-  .tours__list {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 80px;
-  }
-  .tours__item {
-    width: 30%;
-    padding: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-  }
-  .tours__item img {
-    width: 46px;
-    height: 46px;
-    margin-right: 12px;
-  }
-  
-  /* END TOURS */
-/* Footer */
-footer {
-    background-color: #333;
+}
+
+.review {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.review-text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.review-author {
+    font-size: 0.9rem;
+    color: #777;
+    font-weight: bold;
+}
+
+/* Footer Section */
+#footer {
+    background-color: #222;
     color: #fff;
-    text-align: center;
-    padding: 1rem;
-    position: relative;
-    bottom: 0;
+    padding: 40px 20px;
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.footer-container h3 {
+    font-size: 1.2rem;
+    color: #bb2719;
+    margin-bottom: 15px;
+}
+
+.footer-container p,
+.footer-container ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 1.6;
+}
+
+.footer-container a {
+    color: #bb2719;
+    text-decoration: none;
+}
+
+.footer-container a:hover {
+    text-decoration: underline;
+}
+
+.footer-nav ul li {
+    margin-bottom: 10px;
+}
+
+.footer-contact p {
+    margin-bottom: 10px;
+}
+
+.footer-social .social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.footer-social .social-icons img {
     width: 100%;
-    z-index: 1;
+    height: auto;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #aaa;
 }

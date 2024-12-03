@@ -28,91 +28,90 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-        <!-- Hamburger Icon -->
+        <!-- Hamburger Icon !!!REVISE -->
         <div id="hamburger" class="hamburger">&#9776;</div>
     </header>
     
 
-    <!-- Main Content Section with Fullscreen Image Gallery -->
     <main>
-
-        <div class="hero">
-            <h1>Welcome to Istanbul</h1>
-            <p class="hero-tagline">Experience the crossroads of East and West.</p>
-            <div class="buttons">
-                <a href="sightseeing.html" class="btn">Discover Attractions</a>
-                <a href="services.html" class="btn">Plan Your Visit</a>
+        <section id="gallery">
+            <div class="gallery-title">
+                <h1>Welcome to Istanbul</h1>
+                <p class="gallery-tagline">Experience the crossroads of East and West.</p>
+                <div class="buttons">
+                    <a href="sightseeing.html" class="btn">Discover Attractions</a>
+                    <a href="services.html" class="btn">Plan Your Visit</a>
+                </div>
             </div>
-        </div>
-
-        <div class="image-gallery">
-            <button class="nav-button" id="prevBtn" onclick="prevImage()">&#10094;</button>
-            <img id="image" src="img/image1.jpg" alt="Image" />
-            <button class="nav-button" id="nextBtn" onclick="nextImage()">&#10095;</button>
-        </div>
-
-        <!-- Destinations Section -->
-        <section id="dest_wrap" class="destinations">
-            <h2 class="section-title">Top Attractions in Istanbul</h2>
+    
+            <div class="gallery">
+                <button class="nav-button" id="prevBtn" onclick="prevImage()">&#10094;</button>
+                <img id="image" src="img/image1.jpg" alt="Image" />
+                <button class="nav-button" id="nextBtn" onclick="nextImage()">&#10095;</button>
+            </div>
+        </section>
+        
+        <section id="sightseeing">
+            <h2 class="sightseeing-title">Top Attractions in Istanbul</h2>
             <p class="tagline">Discover the wonders of Istanbul, where history, culture, and architecture blend beautifully.</p>
-            <div class="dest-container">
-                <div class="dest-card">
-                    <div class="img-wrapper">
+            <div class="sightseeing-container">
+                <div class="sightseeing-card">
+                    <div class="sightseeing-image">
                         <img src="img/hagia.jpg" alt="Hagia Sophia">
                         <div class="overlay">
                             <h3>Hagia Sophia</h3>
                             <p>Experience the architectural marvel that spans centuries.</p>
-                            <button class="learn-more">Learn More</button>
+                            <a href="" class="sightseeing-btn">Learn More</a>
                         </div>
                     </div>
                 </div>
-                <div class="dest-card">
-                    <div class="img-wrapper">
+                <div class="sightseeing-card">
+                    <div class="sightseeing-image">
                         <img src="img/blue.jpg" alt="Blue Mosque">
                         <div class="overlay">
                             <h3>Blue Mosque</h3>
                             <p>A stunning example of Ottoman architecture.</p>
-                            <button class="learn-more">Learn More</button>
+                            <a href="" class="sightseeing-btn">Learn More</a>
                         </div>
                     </div>
                 </div>
-                <div class="dest-card">
-                    <div class="img-wrapper">
+                <div class="sightseeing-card">
+                    <div class="sightseeing-image">
                         <img src="img/topkapi.jpg" alt="Topkapi Palace">
                         <div class="overlay">
                             <h3>Topkapi Palace</h3>
                             <p>Explore the rich history of the Ottoman Empire.</p>
-                            <button class="learn-more">Learn More</button>
+                            <a href="" class="sightseeing-btn">Learn More</a>
                         </div>
                     </div>
                 </div>
-                <div class="dest-card">
-                    <div class="img-wrapper">
+                <div class="sightseeing-card">
+                    <div class="sightseeing-image">
                         <img src="img/basilica.jpg" alt="Basilica Cistern">
                         <div class="overlay">
                             <h3>Basilica Cistern</h3>
                             <p>A fascinating underground structure that showcases Istanbul’s ancient water system.</p>
-                            <button class="learn-more">Learn More</button>
+                            <a href="" class="sightseeing-btn">Learn More</a>
                         </div>
                     </div>
                 </div>
-                <div class="dest-card">
-                    <div class="img-wrapper">
+                <div class="sightseeing-card">
+                    <div class="sightseeing-image">
                         <img src="img/galata.jpg" alt="Galata Tower">
                         <div class="overlay">
                             <h3>Galata Tower</h3>
                             <p>A historical tower offering panoramic views of Istanbul’s skyline and the Bosphorus.</p>
-                            <button class="learn-more">Learn More</button>
+                            <a href="" class="sightseeing-btn">Learn More</a>
                         </div>
                     </div>
                 </div>
-                <div class="dest-card">
-                    <div class="img-wrapper">
+                <div class="sightseeing-card">
+                    <div class="sightseeing-image">
                         <img src="img/bazaar.jpg" alt="Grand Bazaar">
                         <div class="overlay">
                             <h3>Grand Bazaar</h3>
                             <p>One of the world’s oldest and largest covered markets, offering a truly immersive shopping experience.</p>
-                            <button class="learn-more">Learn More</button>
+                            <a href="" class="sightseeing-btn">Learn More</a>
                         </div>
                     </div>
                 </div>    
@@ -122,27 +121,10 @@
             </div>
         </section>
 
-        <article class="next-holiday">
-            <!-- Image section -->
-            <div class="next-holiday__image-wrap">
-              <img src="/img/bridge.jpg" alt="Holiday Background" class="next-holiday__image">
-            </div>
-            
-            <!-- Text section -->
-            <div class="next-holiday__text-wrap">
-              <p class="next-holiday__text-1">Your</p>
-              <p class="next-holiday__text-2">Next <span class="--title__text-underline holiday-text">Holiday</span></p>
-            </div>
-            
-            <!-- Button section -->
-            <div class="next-holiday__btn-wrap">
-              <a href="#" class="next-holiday__btn">VIEW ALL PACKAGES</a>
-            </div>
-          </article>
-          
-
-        <section id="events" class="events-preview">
-            <h2>What's Happening in Istanbul</h2>
+        <div class="img-divider"></div>
+        
+        <section id="events">
+            <h2 class="events-title">What's Happening in Istanbul</h2>
             <div class="events-grid">
                 <!-- Event 1 -->
                 <div class="event">
@@ -163,61 +145,77 @@
                     <p>Enjoy live performances with stunning Bosphorus views.</p>
                 </div>
             </div>
-            <div class="events-button">
-                <a href="news.html" class="btn">See All Events</a>
+            <div class="events-btn">
+                <a href="news.html" id="btn">See All Events</a>
             </div>
         </section>
          
-        <!-- DISCOVER -->
-        <section class="discover__container">
-            <div class="discover__item discover__img-1">
-            <p>01. LAST MINUTE</p>
-            <h4>Discover Cities</h4>
-            <a href="" class="discover__btn-1">DETAILS</a>
-            </div>
-            <div class="discover__item discover__img-2">
-            <p>02. PROMOTIONS</p>
-            <h4>Discover Nature</h4>
-            <a href="" class="discover__btn-2">DETAILS</a>
+        <section id="cousine">
+            <div class="cousine-item cousine-image">
+            <h4>Turkish Cousine in Istanbul</h4>
+            <a href="cousine.html" class="cousine-btn">Discover Turkish Tastes</a>
             </div>
         </section>
 
-        <section class="tours__container">
-            <article class="tours__list">
-              <div class="tours__item">
-                <img src="https://leloc90.github.io/loveTravel/assets/images/icon-around.png" alt="">
-                <div class="tours__info">
-                  <h5>World Tour</h5>
-                  <p>Lorem ipsum dolor sit amet conse ctetur adip iscing elit Proin rhonc us urna dictum.</p>
-                  <a href="">View more</a>
+        <section id="reviews">
+            <h2 class="reviews-title">What travelers say about us and Istanbul?</h2>
+            <div class="reviews-container">
+                <div class="review">
+                    <p class="review-text">"Istanbul is a magical city with so much history and beauty! The website really captured its charm."</p>
+                    <p class="review-author">- Alex Johnson</p>
                 </div>
-              </div>
-              <div class="tours__item">
-                <img src="https://leloc90.github.io/loveTravel/assets/images/icon-boat.png" alt="">
-                <div class="tours__info">
-                  <h5>Cruises</h5>
-                  <p>Lorem ipsum dolor sit amet conse ctetur adip iscing elit Proin rhonc us urna dictum.</p>
-                  <a href="">View more</a>
+                <div class="review">
+                    <p class="review-text">"Loved the travel tips! Thanks to the site, I had an amazing trip to Istanbul."</p>
+                    <p class="review-author">- Maria Lopez</p>
                 </div>
-              </div>
-              <div class="tours__item">
-                <img src="https://leloc90.github.io/loveTravel/assets/images/icon-landmark.png" alt="">
-                <div class="tours__info">
-                  <h5>Best Tours</h5>
-                  <p>Lorem ipsum dolor sit amet conse ctetur adip iscing elit Proin rhonc us urna dictum.</p>
-                  <a href="">View more</a>
+                <div class="review">
+                    <p class="review-text">"A well-designed and informative site. It made planning my visit so easy."</p>
+                    <p class="review-author">- Liam Carter</p>
                 </div>
-              </div>
-            </article>
+            </div>
         </section>
+        
     </main>
     
     
-    <!-- Global Footer -->
-    <footer>
-        <p>&copy; 2024 Imaginary Town | Contact: info@imaginarytown.com</p>
-        <p>Address: 123 Main Street, Imaginary Town</p>
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <p>Welcome to our guide to Istanbul, a city where history meets modernity. Explore, plan, and enjoy your journey with us!</p>
+            </div>
+            <div class="footer-nav">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#tours">Tours</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:a_ilyassova@kbtu.kz">info@istanbulwebpage.com</a></p>
+                <p>Phone: +90 999 999 999</p>
+                <p>Address: Istanbul, Turkey</p>
+                <p>Made by Alua, Delfin and Elena</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="img/twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="img/youtube.png" alt="YouTube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Istanbul Webpage. All rights reserved.</p>
+        </div>
     </footer>
+    
 
     <script src="script.js"></script>
 </body>
