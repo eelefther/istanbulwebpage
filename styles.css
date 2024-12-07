@@ -856,3 +856,187 @@ nav ul li a:hover {
 .news-events{
     background-color: #e6efff;
 }
+#cuisine {
+    text-align: center;
+    margin: 20px;
+}
+
+.cuisine-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cuisine-tagline {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.cuisine-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Space between rows */
+    align-items: center;
+    width: 100%;
+}
+.cuisine-category h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px; 
+    text-align: left; 
+    font-family: 'Arial', sans-serif; 
+    font-weight: bold; 
+    color: #444;
+    border-bottom: 2px solid #ccc; /* Add a line below for style */
+    padding-bottom: 10px; 
+}
+.item {
+    display: flex;
+    gap: 40px; 
+    align-items: center;
+    max-width: 100%; 
+    text-align: left;
+    flex-wrap: wrap; /* Wrap content for smaller screens */
+    padding: 0 20px; 
+    margin: 40px 0; 
+}
+
+/* Ensure images are larger and maintain aspect ratio */
+.item img {
+    width: 400px; /* Adjust image width */
+    height: 300px;
+    border-radius: 8px;
+}
+
+
+.info {
+    flex: 1; /* Text fills the remaining space */
+    font-size: 1.2rem;
+}
+
+.info h2 {
+    margin: 0;
+    font-size: 2rem; /
+}
+
+.info p {
+    margin: 10px 0;
+    color: #444;
+    line-height: 1.6;
+}
+.item img:hover {
+    transform: scale(1.2); /* Slightly enlarge the image */
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2); /* Add a shadow */
+}
+#services {
+    padding: 20px;
+}
+
+.services-section {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.services-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.services-description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Services Gallery */
+.services-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.services-item {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Add smooth transition for the zoom effect */
+}
+
+/* Image Styles */
+.services-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease; /* Add smooth transition for the zoom effect */
+}
+
+
+.services-item:hover img {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Text Styles */
+.services-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2); 
+    color: white;
+    font-size: 1.2rem; 
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    opacity: 1; /* Make text invisible by default */
+    transition: opacity 0.3s ease;
+}
+
+.services-item:hover .services-text {
+    opacity: 1; /* Make text visible on hover */
+}
+
+.services-transport-info {
+    margin: 20px auto;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 1270px;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.services-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.services-card-description {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.services-card-prices {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.services-card-prices li {
+    font-size: 1.1rem;
+    margin: 5px 0;
+    color: #444;
+}
+.tour-duration, .tour-price {
+    font-size: 0.9rem;
+    margin: 3px 0; 
+    font-weight: normal;
+    color: #f0f0f0; 
+}
