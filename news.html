@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <!-- Global Header -->
+    
     <header>
         <a href="main.html">
             <img id="logo" src="img/logo.png" alt="logo">
@@ -28,95 +28,97 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-        <!-- Hamburger Icon !!!REVISE -->
+        
         <div id="hamburger" class="hamburger">&#9776;</div>
     </header>
     
 
     <main>
-        <!-- Hero Section -->
-        <section id="start">
-          <div class="background">
-            <img src="img/image2.jpg" alt="Image" />
+      <section id="start">
+         <div class="background">
+           <img src="img/image2.jpg" alt="Image" />
+         </div>
+         <div class="title">
+           <p>What's happening in Istanbul?</p>
+           <h1>News & Events</h1>
+         </div>
+      </section>
+        
+      <section class="content">
+        <section class="news-previews">
+          <h2>Latest News</h2>
+          <div id="news-container">
+            <!-- News preview pagination using JS -->
           </div>
-          <div class="title">
-            <p>What's happening in Istanbul?</p>
-            <h1>News & Events</h1>
+          <div class="pagination">
+            <button id="prev-news" class="nav-button-news">Previous</button>
+            <button id="next-news" class="nav-button-news">Next</button>
           </div>
         </section>
       
-        <!-- Main Content Area -->
-        <section class="content">
-          <!-- Left Column: News Previews -->
-          <section class="news-previews">
-            <h2>Latest News</h2>
-            <div id="news-container">
-              <!-- News items will be dynamically loaded here -->
-            </div>
-            <div class="pagination">
-              <button id="prev-news" class="nav-button-news">Previous</button>
-              <button id="next-news" class="nav-button-news">Next</button>
-            </div>
-          </section>
-      
-          <!-- Right Column: Upcoming Events -->
-          <section class="upcoming-events">
-            <h2>Upcoming Events</h2>
-            <div class="event-item">
-              <p class="event-date-time">Dec 15, 2024 | 8:00 PM</p>
-              <h3><a href="events1.html">Whirling Dervishes Performance</a></h3>
-              <p class="event-details">Experience a mesmerizing spiritual dance at the Galata Mevlevi Museum.</p>
-            </div>
-            <div class="event-item">
-              <p class="event-date-time">Dec 20, 2024 | 6:00 PM</p>
-              <h3><a href="events2.html">Bosphorus Night Cruise</a></h3>
-              <p class="event-details">Enjoy the stunning Istanbul skyline from the water.</p>
-            </div>
-            <div class="event-item">
-              <p class="event-date-time">Dec 25, 2024 | 7:00 PM</p>
-              <h3><a href="events3.html">New Year’s Eve Fireworks</a></h3>
-              <p class="event-details">Celebrate the New Year with a stunning fireworks display over the Bosphorus.</p>
-            </div>
-          </section>
+        <section class="upcoming-events">
+          <h2>Upcoming Events</h2>
+          <div class="event-item">
+            <p class="event-date-time">Dec 15, 2024 | 8:00 PM</p>
+            <h3><a href="events1.html">Whirling Dervishes Performance</a></h3>
+            <p class="event-details">Experience a mesmerizing spiritual dance at the Galata Mevlevi Museum.</p>
+          </div>
+          <div class="event-item">
+            <p class="event-date-time">Dec 20, 2024 | 6:00 PM</p>
+            <h3><a href="events2.html">Bosphorus Night Cruise</a></h3>
+            <p class="event-details">Enjoy the stunning Istanbul skyline from the water.</p>
+          </div>
+          <div class="event-item">
+            <p class="event-date-time">Dec 25, 2024 | 7:00 PM</p>
+            <h3><a href="events3.html">New Year’s Eve Fireworks</a></h3>
+            <p class="event-details">Celebrate the New Year with a stunning fireworks display over the Bosphorus.</p>
+          </div>
         </section>
-      </main>
+
+      </section>
+    </main>
 
     <footer id="footer">
-        <div class="footer-container">
-            <div class="footer-about">
-                <h3>About Us</h3>
-                <p>Welcome to our guide to Istanbul, a city where history meets modernity. Explore, plan, and enjoy your journey with us!</p>
-            </div>
-            <div class="footer-nav">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#tours">Tours</a></li>
-                    <li><a href="#reviews">Reviews</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>Contact Us</h3>
-                <p>Email: <a href="mailto:a_ilyassova@kbtu.kz">info@istanbulwebpage.com</a></p>
-                <p>Phone: +90 999 999 999</p>
-                <p>Address: Istanbul, Turkey</p>
-                <p>Made by Alua, Delfin and Elena</p>
-            </div>
-            <div class="footer-social">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
-                    <a href="#"><img src="img/twitter.png" alt="Twitter"></a>
-                    <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
-                    <a href="#"><img src="img/youtube.png" alt="YouTube"></a>
-                </div>
+      <div class="footer-container">
+        <div class="footer-about">
+            <h3>About Us</h3>
+            <p>Welcome to our guide to Istanbul, a city where history meets modernity. Explore, plan, and enjoy your journey with us!</p>
+        </div>
+
+        <div class="footer-nav">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#tours">Tours</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:a_ilyassova@kbtu.kz">info@istanbulwebpage.com</a></p>
+            <p>Phone: +90 999 999 999</p>
+            <p>Address: Istanbul, Turkey</p>
+            <p>Made by Alua, Delfin and Elena</p>
+        </div>
+
+        <div class="footer-social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="img/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="img/youtube.png" alt="YouTube"></a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Istanbul Webpage. All rights reserved.</p>
-        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 Istanbul Webpage. All rights reserved.</p>
+      </div>
+
     </footer>
     
 
