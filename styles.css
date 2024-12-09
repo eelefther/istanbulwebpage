@@ -1040,3 +1040,194 @@ nav ul li a:hover {
     font-weight: normal;
     color: #f0f0f0; 
 }
+/*Contact*/
+
+.map{
+    width: 80%;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+.map iframe{
+    width: 100%;
+    height: 350px;
+    border:none;
+}
+.container-contact{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.contact-info,
+.contact-form {
+    flex: 1 1 45%;
+    max-width: 500px;
+}
+
+.contact-info div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact-info div .fas {
+    color: #a30000;
+    font-size: 28px;
+    margin-right: 20px;
+}
+
+.contact-info div h5 {
+    font-size: 18px;
+    color: #a30000;
+    margin: 0 0 5px;
+}
+
+.contact-info div p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #a30000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+.contact-form button:hover {
+    background-color: #900;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .container-contact {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info,
+    .contact-form {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .map iframe {
+        height: 250px;
+    }
+}
+
+/*History*/
+/* General Styles */
+
+.container-history {
+    width: 90%;
+    margin: auto;
+    max-width: 1200px;
+    padding: 20px 0;
+}
+
+
+/* Timeline Section */
+.timeline {
+    background-color: #f9f9f9;
+    padding: 40px 0;
+}
+
+.timeline h2 {
+    text-align: center;
+    color: #a30000;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.period {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.period img {
+    max-width: 40%;
+    border-radius: 8px;
+}
+
+.period .left {
+    flex-direction: row;
+}
+
+.period .right {
+    flex-direction: row-reverse;
+}
+
+.period .text {
+    flex: 1;
+    padding: 20px;
+}
+
+.period h3 {
+    color: #a30000;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.period p {
+    text-align: justify;
+    margin: 0 0 10px;
+    font-size: 16px;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .period {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .period img {
+        max-width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .period .text {
+        padding: 0;
+        text-align: center;
+    }
+    /* Add specific rule for left image periods to stack correctly */
+    .period .left {
+        flex-direction: column; /* Stack the image below the text */
+    }
+
+    /* For right image periods, keep the column direction */
+    .period .right {
+        flex-direction: column; /* Image will be placed below text */
+    }
+}
+

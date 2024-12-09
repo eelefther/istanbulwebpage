@@ -8,29 +8,72 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
 
 </head>
 <body>
 
     <!-- Global Header -->
     <header>
-        <img id="logo" src="logo.png" alt="logo">
+        <a href="main.html">
+            <img id="logo" src="img/logo.png" alt="logo">
+        </a>
         <h2>Istanbul, Turkiye</h2>
         <nav>
-            <ul>
-                <li><a href="index.html">Food-Elena</a></li>
-                <li><a href="news.html">News & Events-Alua</a></li>
-                <li><a href="history.html">History-Delfin</a></li>
-                <li><a href="sightseeing.html">Sightseeing-together</a></li>
-                <li><a href="services.html">Services-Elena</a></li>
-                <li><a href="contact.html">Contact-Delfin</a></li>
+            <ul id="nav-list">
+                <li><a href="news.html">News & Events</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="sightseeing.html">Sightseeing</a></li>
+                <li><a href="cousine.html">Cousine</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
+        <!-- Hamburger Icon !!!REVISE -->
+        <div id="hamburger" class="hamburger">&#9776;</div>
     </header>
 
     <!-- Main Content Section with Fullscreen Image Gallery -->
     <main>
-        <h1 >Welcome to Istanbul!</h1>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d385396.3210078792!2d28.682539152230493!3d41.005370225195975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa7040068086b%3A0xe1ccfe98bc01b0d0!2zxLBzdGFuYnVsLCBUw7xya2l5ZQ!5e0!3m2!1str!2scz!4v1733680028045!5m2!1str!2scz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="container-contact">
+            <div class="contact-info">
+                <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>
+                        <h5>Address</h5>
+                        <p>Ankara Caddesi 34110 Cağaloğlu-Fatih/İstanbul</p>
+                    </span>
+                </div>
+                <div>
+                    <i class="fas fa-phone"></i>
+                    <span>
+                        <h5>Telefon</h5>
+                        <p>+90 212 455 59 00</p>
+                    </span>
+                </div>
+                <div>
+                    <i class="fas fa-envelope"></i>
+                    <span>
+                        <h5>E-Mail</h5>
+                        <p>istanbul@icisleri.gov.tr</p>
+                    </span>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form action="">
+                    <input type="text" placeholder="Enter your name" required> 
+                    <input type="text" placeholder="Enter your E-Mail" required> 
+                    <input type="text" placeholder="Enter your Subject" required>
+                    <textarea rows="8" placeholder="Message" required></textarea>
+                    <button type="submit">send Message</button> 
+                </form>
+            </div>
+        </div>
+        
         
     </main>
 
@@ -38,9 +81,42 @@
 
     
     <!-- Global Footer -->
-    <footer>
-        <p>&copy; 2024 Imaginary Town | Contact: info@imaginarytown.com</p>
-        <p>Address: 123 Main Street, Imaginary Town</p>
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <p>Welcome to our guide to Istanbul, a city where history meets modernity. Explore, plan, and enjoy your journey with us!</p>
+            </div>
+            <div class="footer-nav">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#tours">Tours</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:a_ilyassova@kbtu.kz">info@istanbulwebpage.com</a></p>
+                <p>Phone: +90 999 999 999</p>
+                <p>Address: Istanbul, Turkey</p>
+                <p>Made by Alua, Delfin and Elena</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="img/twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="img/youtube.png" alt="YouTube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Istanbul Webpage. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
