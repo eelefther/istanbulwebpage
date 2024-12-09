@@ -16,22 +16,23 @@ body {
 
 /* Header - Fixed at the top */
 header {
-    background: linear-gradient(to bottom, #bb2719, rgba(204, 0, 0, 0)); 
+    background-color: #bb2719; 
     color: #fff;
     padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed;  /* Fix the header at the top */
+    position: sticky;  /* Fix the header at the top */
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10;
     flex-wrap: wrap; /* Allow flex items to wrap */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #logo {
-    height: 100px;
+    height: 60px;
     width: auto;
     margin-right: 10px;
 }
@@ -73,27 +74,32 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Responsive Design - For smaller screens */
 @media (max-width: 768px) {
     header {
-        flex-direction: column; /* Stack logo and h2 vertically */
+        flex-direction: column; /* Stack items vertically */
         align-items: center; /* Center items horizontally */
         padding: 1rem; /* Adjust padding */
+        position: static;
     }
 
     nav {
         width: 100%; /* Take full width */
-        justify-content: center; /* Center the nav items */
+        justify-content: center; /* Center navigation */
     }
 
     nav ul {
-        flex-direction: column; /* Stack nav items vertically */
+        flex-direction: column; /* Stack navigation items vertically */
         width: 100%; /* Full width of the screen */
-        align-items: center; /* Center the list items */
+        align-items: center;
+        margin-top: 10px;
     }
 
     nav ul li {
-        margin: 0.5rem 0; /* Space out the nav items */
+        margin: 0.5rem 0; /* Space out navigation items */
+    }
+    
+    header h2{
+        display:none;
     }
 }
 
@@ -113,25 +119,20 @@ nav ul li a:hover {
     }
 
     nav ul {
-        display: none; /* Hide nav items by default */
-        flex-direction: column; /* Stack items vertically */
-        width: 100%;
-        align-items: center;
-        margin-top: 10px;
+        display: none; /* Hide navigation items by default */
     }
 
     nav ul.show {
-        display: flex; /* Show nav items when the menu is toggled */
+        display: flex; /* Show navigation items when the menu is toggled */
     }
 
     nav ul li {
-        margin: 0.5rem 0; /* Space out nav items */
+        margin: 0.5rem 0; /* Space out navigation items */
     }
 }
 
 
-/* Ensure image gallery section is positioned correctly */
-/* Fullscreen Image Gallery */
+/* GALLERY */
 #gallery {
     position: relative;  /* Positioning relative to its parent */
     width: 100vw;        /* Full viewport width */
@@ -172,9 +173,10 @@ nav ul li a:hover {
 /* Image styling for full-screen behavior */
 .gallery img {
     width: 100%;            /* Ensure the image spans the full width */
-    height: 100%;           /* Ensure the image spans the full height */
+    height: auto;           /* Ensure the image spans the full height */
     object-fit: cover;      /* Ensure the image covers the container area */
-    object-position: center; /* Center the image within the container */
+    object-position: center;
+    max-height: 100%; /* Center the image within the container */
 }
 
 /* Navigation buttons (Prev/Next) */
@@ -206,7 +208,6 @@ nav ul li a:hover {
     right: 20px; /* Position the next button to the right */
 }
 
-/* Hover effect for buttons */
 .nav-button:hover {
     background-color: #a30000;
 }
@@ -233,7 +234,78 @@ nav ul li a:hover {
     transform: scale(1.05)
 }
 
+@media (max-width: 1024px) {
+    #gallery {
+        height: auto; /* Adjust height for smaller devices */
+    }
 
+    .gallery-title {
+        padding: 15px 30px;
+    }
+
+    .gallery-title h1 {
+        font-size: 2.5rem;
+    }
+
+    .gallery-tagline {
+        font-size: 1.2rem;
+    }
+    
+    .buttons .btn {
+        font-size: 1rem;
+        padding: 0.7rem 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-title {
+        padding: 10px 20px;
+    }
+
+    .gallery-title h1 {
+        font-size: 2rem;
+    }
+
+    .gallery-tagline {
+        font-size: 1rem;
+    }
+    
+    .buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 0.5rem;
+    }
+    
+    .buttons .btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #gallery {
+        height: auto; /* Allow content to determine height */
+    }
+
+    .gallery-title h1 {
+        font-size: 1.5rem;
+    }
+
+    .gallery-tagline {
+        font-size: 0.9rem;
+    }
+
+    .nav-button {
+        width: 40px; /* Smaller buttons */
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .buttons .btn {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.8rem;
+    }
+}
+/*EVENTS*/
 #events {
     padding: 2rem 1rem;
     background-color: #f9f9f9;
@@ -773,11 +845,10 @@ nav ul li a:hover {
     margin-top: 20px; /* Add spacing above the buttons */
   }
   
+  
   /* NEWS PAGES 1,2,3 */
 /* News Article Styles */
-.content-area{
-    padding-top: 132px;
-}
+
 .news-article {
     max-width: 800px;
     margin: 40px auto; /* Center align and add spacing */
@@ -854,8 +925,135 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 .news-events{
-    background-color: #e6efff;
+    background-color: #eeb0b0;
 }
+
+/* Default Styles (Desktop First) */
+@media screen and (max-width: 1200px) {
+    /* Adjust content margins and padding */
+    .content {
+        margin: 10px;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .news-previews h2,
+    .upcoming-events h2 {
+        font-size: 1.5rem;
+    }
+    
+    .title h1 {
+        font-size: 2.5rem;
+    }
+
+    .title p {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    /* Tablet layout adjustments */
+    .content {
+        flex-direction: column; /* Stack columns */
+        gap: 20px;
+    }
+
+    .news-previews, 
+    .upcoming-events {
+        flex: unset; /* Reset flex values */
+        margin-bottom: 20px;
+    }
+
+    .title h1 {
+        font-size: 2rem;
+    }
+
+    .title p {
+        font-size: 1rem;
+    }
+
+    .pagination {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Mobile-friendly layout */
+    #start {
+        height: 80vh; /* Reduce hero section height */
+    }
+
+    .title {
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+
+    .title h1 {
+        font-size: 1.8rem;
+    }
+
+    .title p {
+        font-size: 0.9rem;
+    }
+
+    .content {
+        margin: 5px;
+        padding: 10px;
+    }
+
+    .news-previews h2,
+    .upcoming-events h2 {
+        font-size: 1.2rem;
+    }
+
+    .event-item h3 a {
+        font-size: 1rem;
+    }
+
+    .nav-button-news {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .return-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    /* Smaller Mobile Screens */
+    .title h1 {
+        font-size: 1.5rem;
+    }
+
+    .title p {
+        font-size: 0.8rem;
+    }
+
+    .event-item h3 a {
+        font-size: 0.9rem;
+    }
+
+    .news-image {
+        height: 200px; /* Reduce image height for small screens */
+    }
+
+    .content-area {
+        padding: 10px;
+    }
+
+    .news-article {
+        padding: 20px;
+    }
+
+    .return-button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
+/*End of NEWS pages*/
 #cuisine {
     text-align: center;
     margin: 20px;
