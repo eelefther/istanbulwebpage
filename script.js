@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // JavaScript to toggle the menu visibility on mobile
-document.getElementById('hamburger').addEventListener('click', function() {
+document.getElementById('menu').addEventListener('click', function() {
     document.getElementById('nav-list').classList.toggle('show');
 });
 
