@@ -1157,6 +1157,12 @@ nav ul li a:hover {
     max-width: 1200px;
     padding: 20px 0;
 }
+.container-history img{
+    width: 300px; /* Sabit genişlik */
+    height: 200px; /* Sabit yükseklik */
+    object-fit: cover; /* Görüntüyü orantılı bir şekilde keserek kapsar */
+    border-radius: 8px; /* Kenarları yuvarla */
+}
 
 
 /* Timeline Section */
@@ -1223,6 +1229,7 @@ nav ul li a:hover {
     .period img {
         max-width: 80%;
         margin-bottom: 20px;
+        order: 1;
     }
 
     .period .text {
