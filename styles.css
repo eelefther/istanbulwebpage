@@ -85,7 +85,6 @@ nav ul li a:hover {
         align-items: center; 
         flex-wrap: nowrap;
         padding: 1rem; 
-        position: static;
     }
 
     header h2{
@@ -124,9 +123,7 @@ nav ul li a:hover {
     }    
 }
 
-
-/* Ensure image gallery section is positioned correctly */
-/* Fullscreen Image Gallery */
+/* GALLERY */
 #gallery {
     position: relative;  
     width: 100%;        
@@ -137,12 +134,12 @@ nav ul li a:hover {
 .gallery-title {
     position: absolute;
     top: 50%;
-    left: 50%; /* centering lef corner*/
+    left: 50%; /* centering lefT corner*/
     transform: translate(-50%, -50%); /*to align container's center*/
     text-align: center;
     color: #fff;
     z-index: 2;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    background-color: rgba(0, 0, 0, 0.5); 
     padding: 20px 40px;
     border-radius: 10px;
     box-sizing: border-box;
@@ -294,11 +291,11 @@ nav ul li a:hover {
 
 @media (max-width: 480px) {
     #gallery {
-        height: auto; /* Allow content to determine height */
+        height: auto;
     }
 
     .gallery {
-        aspect-ratio: 1 / 1; /* Square aspect ratio for very small screens */
+        aspect-ratio: 1 / 1; 
     }
 
     .gallery-title h1 {
@@ -310,7 +307,7 @@ nav ul li a:hover {
     }
 
     .nav-button {
-        width: 30px; /* Smaller buttons */
+        width: 30px; 
         height: 30px;
         font-size: 20px;
     }
@@ -354,7 +351,7 @@ nav ul li a:hover {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
-    padding: 0 20px;
+    padding: 0 50px;
 }
 
 .sightseeing-card {
@@ -455,18 +452,15 @@ nav ul li a:hover {
     transform: scale(1.05); 
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 963px) {
     .sightseeing-container {
-        padding: 0 50px;
+        padding: 0 20px;
     }
-}
-
-@media (max-width: 768px) {
     .sightseeing-card {
         flex-basis: calc(50% - 20px); /*takes half of the container's width -20px for margin between*/
     }
     .overlay h3 {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
     
     .overlay p {
@@ -474,16 +468,9 @@ nav ul li a:hover {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 750px) {
     .sightseeing-card {
         flex-basis: 100%;
-    }
-    .overlay h3 {
-        font-size: 1rem;
-    }
-    
-    .overlay p {
-        font-size: 0.9rem;
     }
 }
 
@@ -1381,7 +1368,7 @@ nav ul li a:hover {
     background-color: #900;
 }
 
-/* Media Queries */
+
 @media screen and (max-width: 768px) {
     .container-contact {
         flex-direction: column;
@@ -1400,7 +1387,6 @@ nav ul li a:hover {
 }
 
 /*History*/
-/* General Styles */
 
 .container-history {
     width: 90%;
@@ -1409,14 +1395,12 @@ nav ul li a:hover {
     padding: 20px 0;
 }
 .container-history img{
-    width: 300px; /* Sabit genişlik */
-    height: 200px; /* Sabit yükseklik */
-    object-fit: cover; /* Görüntüyü orantılı bir şekilde keserek kapsar */
-    border-radius: 8px; /* Kenarları yuvarla */
+    width: 300px; 
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 8px; 
 }
 
-
-/* Timeline Section */
 .timeline {
     background-color: #f9f9f9;
     padding: 40px 0;
@@ -1469,8 +1453,6 @@ nav ul li a:hover {
     font-size: 16px;
 }
 
-
-/* Responsive Design */
 @media screen and (max-width: 768px) {
     .period {
         flex-direction: column;
@@ -1487,14 +1469,13 @@ nav ul li a:hover {
         padding: 0;
         text-align: center;
     }
-    /* Add specific rule for left image periods to stack correctly */
+    
     .period .left {
-        flex-direction: column; /* Stack the image below the text */
+        flex-direction: column; 
     }
 
-    /* For right image periods, keep the column direction */
     .period .right {
-        flex-direction: column; /* Image will be placed below text */
+        flex-direction: column; 
     }
 }
 #sights {
