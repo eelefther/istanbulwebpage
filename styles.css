@@ -2,7 +2,7 @@ html, body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     box-sizing: border-box;
 }
 *, *::before, *::after {
@@ -11,7 +11,7 @@ html, body {
     box-sizing: inherit;
 }
 
-
+/*HEADER*/
 header {
     background-color: #bb2719; 
     color: #fff;
@@ -40,15 +40,13 @@ header h2 {
     font-size: 2rem;
 }
 
-/* Navigation - Adjust for smaller screens */
 nav {
     flex-grow: 1;
     display: flex;
     justify-content: flex-end;
-    flex-wrap: wrap; /* Allow navigation to wrap */
+    /* flex-wrap: wrap;  */
 }
 
-/* Ensure the nav ul takes up all the space and wraps on small screens */
 nav ul {
     display: flex;
     justify-content: flex-end;
@@ -71,7 +69,32 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-.menu {
+/* Responsive Design - For smaller screens */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack logo and h2 vertically */
+        align-items: center; /* Center items horizontally */
+        padding: 1rem; /* Adjust padding */
+    }
+
+    nav {
+        width: 100%; /* Take full width */
+        justify-content: center; /* Center the nav items */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+        width: 100%; /* Full width of the screen */
+        align-items: center; /* Center the list items */
+    }
+
+    nav ul li {
+        margin: 0.5rem 0; /* Space out the nav items */
+    }
+}
+
+/* Hamburger Menu */
+.hamburger {
     display: none; /* Hidden by default */
     font-size: 30px;
     cursor: pointer;
@@ -79,76 +102,51 @@ nav ul li a:hover {
     padding: 10px;
 }
 
-
+/* Display hamburger on small screens */
 @media (max-width: 768px) {
-    header {
-        flex-direction: row;
-        justify-content: space-between; /* Stack items vertically */
-        align-items: center; /* Center items horizontally */
-        flex-wrap: nowrap;
-        padding: 1rem; /* Adjust padding */
-        position: static;
-    }
-
-    header h2{
-        display:none;
-    }
-    
-    #logo{
-        margin-right: auto;
-    }
-
-    .menu {
-        margin-left: auto;
-        display: block;         
-    }
-
-    nav {
-        width: 100%; /* Take full width */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .hamburger {
+        display: block; /* Show hamburger icon */
     }
 
     nav ul {
-        display: none;
-        flex-direction: column; /* Stack navigation items vertically */
-        width: 100%; /* Full width of the screen */
+        display: none; /* Hide nav items by default */
+        flex-direction: column; /* Stack items vertically */
+        width: 100%;
+        align-items: center;
         margin-top: 10px;
         
     }
 
     nav ul.show {
-        display: flex;
-        align-items: end; /* Show navigation items when the menu is toggled */
+        display: flex; /* Show nav items when the menu is toggled */
     }
 
     nav ul li {
-        margin: 0.5rem 0; /* Space out navigation items */
-    }    
+        margin: 0.5rem 0; /* Space out nav items */
+    }
 }
 
 
 /* GALLERY */
 #gallery {
-    position: relative;  /* Positioning relative to its parent */
-    width: 100vw;        /* Full viewport width */
-    height: 100vh;       /* Full viewport height */
-    overflow: hidden;    /* Prevent overflow */
+    position: relative;  
+    width: 100%;        
+    height: 100vh;       
+    overflow: hidden;    
 }
 
 .gallery-title {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 50%; /* centering lef corner*/
+    transform: translate(-50%, -50%); /*to align container's center*/
     text-align: center;
     color: #fff;
     z-index: 2;
     background-color: rgba(0, 0, 0, 0.5); 
     padding: 20px 40px;
     border-radius: 10px;
-    max-width: 100%;   
+    max-width: 100%;   /* Prevent the hero from overflowing horizontally */
     box-sizing: border-box;
 }
 
@@ -160,8 +158,8 @@ nav ul li a:hover {
 }
 
 .gallery-tagline {
-    font-size: 1.5rem; /* Slightly smaller than h1 */
-    font-family: Arial, sans-serif; /* Simpler font for contrast */
+    font-size: 1.5rem;  
+    font-family: Arial, sans-serif;  
     margin-bottom: 2rem;
     color: #fff;
     line-height: 1.2;
@@ -175,7 +173,14 @@ nav ul li a:hover {
     overflow: hidden;
 }
 
-/* Image styling for full-screen behavior */
+.gallery {
+    position: relative;
+    margin: auto;
+    aspect-ratio: 16 / 9;  
+    overflow: hidden;
+}
+
+ 
 .gallery img {
     width: 100vw;            
     height: 100vh;           
@@ -188,27 +193,27 @@ nav ul li a:hover {
     background-color: #bb2719;
     color: white;
     border: none;
-    font-size: 30px; /* Increase font size for better centering */
+    font-size: 30px;  
     cursor: pointer;
     border-radius: 50%;
-    width: 60px;   /* Adjust button size to ensure symbols are centered */
-    height: 60px;  /* Same height as width for a perfect circle */
+    width: 60px;    
+    height: 60px;   
     transition: background-color 0.3s ease;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    display: flex;          /* Flexbox for centering */
-    justify-content: center; /* Horizontally center the content */
-    align-items: center;    /* Vertically center the content */
-    z-index: 2;
+    display: flex;          
+    justify-content: center;  
+    align-items: center;    
+    /* z-index: 2; */
 }
 
 #prevBtn {
-    left: 20px;  /* Position the previous button to the left */
+    left: 20px;  
 }
 
 #nextBtn {
-    right: 20px; /* Position the next button to the right */
+    right: 20px; 
 }
 
 .nav-button:hover {
@@ -236,15 +241,14 @@ nav ul li a:hover {
     background-color: #a30000;
     transform: scale(1.05)
 }
- 
-@media (max-width: 1024px) {
-    #gallery {
-        height: auto; 
-    }
 
-    .gallery-title {
-        padding: 15px 30px;
-    }
+
+#events {
+    padding: 2rem 1rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
 
     .gallery-title h1 {
         font-size: 2.5rem;
@@ -262,11 +266,6 @@ nav ul li a:hover {
 } 
 
 @media (max-width: 768px) {
-    #gallery{
-        height: auto;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-    }
     .gallery{
         aspect-ratio: 4 / 3;
     }
@@ -300,11 +299,11 @@ nav ul li a:hover {
 
 @media (max-width: 480px) {
     #gallery {
-        height: auto; /* Allow content to determine height */
+        height: auto; 
     }
 
     .gallery {
-        aspect-ratio: 1 / 1; /* Square aspect ratio for very small screens */
+        aspect-ratio: 1 / 1; 
     }
 
     .gallery-title h1 {
@@ -315,8 +314,8 @@ nav ul li a:hover {
         font-size: 0.8rem;
     }
 
-    .nav-button {
-        width: 30px; /* Smaller buttons */
+    .nav-button{
+        width: 30px;
         height: 30px;
         font-size: 20px;
     }
@@ -330,11 +329,160 @@ nav ul li a:hover {
         font-size: 0.8rem;
         padding: 0.5rem 0.8rem;
     }
-    .nav-button{
-        width: 50px;   
-        height: 50px;
+}
+
+/* SIGHTSEEING */
+#sightseeing {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#sightseeing .sightseeing-title {
+    font-size: 2.5em;
+    color: #333;
+}
+
+.tagline {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.sightseeing-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.sightseeing-card {
+    position: relative;
+    flex-basis: calc(33.33% - 20px);
+    overflow: hidden;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+ 
+.sightseeing-image{
+    width: 100%;  
+    height: 250px;  
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}   
+
+.sightseeing-image img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: transform 0.3s ease;
+}
+
+.sightseeing-image:hover img {
+    transform: scale(1.1); 
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sightseeing-image:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+.overlay p {
+    margin: 10px 20px;
+    text-align: center;
+    font-size: 1em;
+}
+
+.sightseeing-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #bb2719;
+    border: none;
+    color: white;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sightseeing-btn:hover {
+    background-color: #a30000;
+    transform: scale(1.05)
+}
+
+/* Media query for larger screens */
+@media (min-width: 1200px) {
+    .sightseeing-container {
+        padding: 0 50px;
     }
 }
+
+@media (max-width: 768px) {
+    .sightseeing-card {
+        flex-basis: calc(50% - 20px); /*takes half of the container's width -20px for margin between*/
+    }
+    .overlay h3 {
+        font-size: 1.2em;
+    }
+    
+    .overlay p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .sightseeing-card {
+        flex-basis: 100%;
+    }
+    .overlay h3 {
+        font-size: 1em;
+    }
+    
+    .overlay p {
+        font-size: 0.9em;
+    }
+}
+
+#sightseeing .buttons {
+    margin-top: 30px;
+    text-align: center; 
+}
+
+
+.img-divider {
+    height: 250px;
+    width: 100%;
+    background: no-repeat center / cover
+      url(img/bridge.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /*EVENTS*/
 #events {
     padding: 2rem 1rem;
@@ -393,205 +541,29 @@ nav ul li a:hover {
     border-radius: 5px;
     font-weight: bold;
     font-size: 1.2rem;
-    display: inline-block; /* Make the link behave like a block element */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition for transform */
+    display: inline-block;  
+    transition: background-color 0.3s ease, transform 0.3s ease;  
 }
 
 .events-btn #btn:hover {
     background-color: #a30000;
-    transform: scale(1.05); /* Slight zoom effect on hover */
+    transform: scale(1.05);  
 }
 
-
-/* Destinations Section */
-#sightseeing {
-    padding: 50px 20px;
-    background-color: #f9f9f9;
-    text-align: center;
-}
-
-#sightseeing .sightseeing-title {
-    font-size: 2.5em;
-    color: #333;
-}
-
-.tagline {
-    font-size: 1.2em;
-    color: #555;
-    margin-bottom: 30px;
-    font-style: italic;
-}
-
-.sightseeing-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 0 20px;
-}
-
-.sightseeing-card {
-    position: relative;
-    flex-basis: calc(33.33% - 20px);
-    overflow: hidden;
-    border-radius: 10px;
-    box-sizing: border-box;
-}
-
-/* Adjusting size of images */
-.sightseeing-image{
-    width: 100%; /* Full width of the card */
-    height: 250px; /* Adjust this value to change the image height */
-    overflow: hidden;
-    position: relative;
-    border-radius: 10px;
-}   
-
-/* Image scaling */
-.sightseeing-image img {
-    width: 100%; /* Ensures image stretches to fit the container width */
-    height: 100%; /* Ensures image stretches to fit the container height */
-    object-fit: cover; /* Maintains aspect ratio and crops image */
-    transition: transform 0.3s ease;
-}
-
-
-.sightseeing-image:hover img {
-    transform: scale(1.1); /* Zoom-in effect */
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.sightseeing-image:hover .overlay {
-    opacity: 1;
-}
-
-.overlay h3 {
-    margin: 10px 0;
-    font-size: 1.5em;
-}
-
-.overlay p {
-    margin: 10px 20px;
-    text-align: center;
-    font-size: 1em;
-}
-
-.sightseeing-btn {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #bb2719;
-    border: none;
-    color: white;
-    font-size: 1em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.sightseeing-btn:hover {
-    background-color: #a30000;
-    transform: scale(1.05)
-}
-.sightseeing-btn-see {
-    text-align: center;
-    margin-top: 1.5rem;
-}
-
-.sightseeing-btn-see #btn {
-    background-color: #bb2719;
-    color: white;
-    text-decoration: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 1.2rem;
-    display: inline-block; /* Make the link behave like a block element */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition for transform */
-}
-
-.sightseeing-btn-see #btn:hover {
-    background-color: #a30000;
-    transform: scale(1.05); /* Slight zoom effect on hover */
-}
-
-
-/* Media query for larger screens */
-@media (min-width: 1200px) {
-    .sightseeing-container {
-        padding: 0 50px;
-    }
-}
-
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-    .sightseeing-card {
-        flex-basis: calc(50% - 20px);
-    }
-    .overlay h3 {
-        font-size: 1.2em;
-    }
-    
-    .overlay p {
-        font-size: 1em;
-    }
-}
-
-@media (max-width: 480px) {
-    .sightseeing-card {
-        flex-basis: 100%;
-    }
-    .overlay h3 {
-        font-size: 1em;
-    }
-    
-    .overlay p {
-        font-size: 0.9em;
-    }
-}
-
-#sightseeing .buttons {
-    margin-top: 30px;
-    text-align: center; /* Center the button */
-}
-
-
-.img-divider {
-    height: 250px;
-    width: 100%;
-    background: no-repeat center / cover
-      url(img/bridge.jpg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-  #cousine {
+/*COUSINE*/
+#cousine {
     margin: 0;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .cousine-image {
+}
+
+.cousine-image {
     background: no-repeat center / cover
-      url(img/cousine.png);
-  }
-  .cousine-item {
+    url(img/cousine.png);
+}
+.cousine-item {
     flex: 1;
     height: 248px;
     display: flex;
@@ -599,16 +571,16 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
     letter-spacing: 1px;
-  }
-  .cousine-item h4 {
+}
+.cousine-item h4 {
     font-size: 36px;
     color: #fff;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Add text shadow for readability */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); 
     padding: 10px 15px;
-  }
+}
 
-  .cousine-btn {
+.cousine-btn {
     margin-top: 15px;
     padding: 10px 20px;
     background-color: #bb2719;
@@ -623,13 +595,11 @@ nav ul li a:hover {
 }
 
 .cousine-btn:hover {
-    background-color: #a30000; /* Darker color on hover */
-    transform: scale(1.05); /* Slight zoom-in effect on hover */
+    background-color: #a30000; 
+    transform: scale(1.05); 
 }
 
-  /* END DISCOVER */
-
-  /* Reviews Section */
+/* REVIEWS */
 #reviews {
     background-color: #f9f9f9;
     padding: 50px 20px;
@@ -671,7 +641,7 @@ nav ul li a:hover {
     font-weight: bold;
 }
 
-/* Footer Section */
+/* FOOTER */
 #footer {
     background-color: #222;
     color: #fff;
@@ -745,104 +715,105 @@ nav ul li a:hover {
 
 /* NEWS PAGE */
 
+/*START*/
 #start {
     position: relative;
     width: 100%;
-    height: 100vh; /* Full viewport height */
-    overflow: hidden; /* Prevent scrollbars due to positioning */
-  }
+    height: 100vh;  
+    overflow: hidden;  
+}
   
-  .background img {
-    width: 100%;            /* Full width of the viewport */
-    height: 100%;           /* Full height of the viewport */
-    object-fit: cover;      /* Scale image to cover the area without distortion */
-    object-position: center; /* Center the image */
+.background img {
+    width: 100%;             
+    height: 100%;            
+    object-fit: cover;       
+    object-position: center; 
     z-index: 1;
-    position: absolute;     /* Position it in the background */
-  }
+    position: absolute;    
+}
   
-  .title {
+.title {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: #fff;
-    z-index: 2; /* Ensures this is above the image */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 2;  
+    background-color: rgba(0, 0, 0, 0.5);  
     padding: 20px 40px;
     border-radius: 10px;
-  }
+}
   
-  .title h1 {
+.title h1 {
     font-size: 3rem;
     font-family: "Eagle Lake", serif;
     margin-bottom: 0.5rem;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-  }
+}
   
-  .title p {
-    font-size: 1.5rem; /* Slightly smaller than h1 */
-    font-family: Arial, sans-serif; /* Simpler font for contrast */
+.title p {
+    font-size: 1.5rem;  
+    font-family: Arial, sans-serif;  
     line-height: 1.2;
-  }
-  /* MAIN CONTENT AREA */
+}
+/* CONTENT */
 .content {
     display: flex;
-    gap: 20px; /* Space between columns */
+    gap: 20px;  
     margin: 20px;
     padding: 20px;
   }
   
-  .news-previews,
-  .upcoming-events {
-    flex: 1; /* Equal width for both columns */
+.news-previews,
+.upcoming-events {
+    flex: 1; 
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+}
   
-  .news-previews h2,
-  .upcoming-events h2 {
+.news-previews h2,
+.upcoming-events h2 {
     font-size: 1.8rem;
     margin-bottom: 20px;
     color: #333;
     border-bottom: 2px solid #ddd;
     padding-bottom: 5px;
-  }
+}
   
-  .news-item,
-  .event-item {
+.news-item,
+.event-item {
     margin-bottom: 20px;
-  }
-  
-  .thumbnail {
+}
+/* for news preview JS */
+.thumbnail {
     float: left;
     margin-right: 15px;
     width: 150px;
     height: 150px;
     object-fit: cover;
     border-radius: 8px;
-  }
+}
   
-  .news-info h3 a,
-  .event-item h3 a {
+.news-info h3 a,
+.event-item h3 a {
     text-decoration: none;
     color: #007BFF;
-  }
+}
   
-  .news-info h3 a:hover,
-  .event-item h3 a:hover {
+.news-info h3 a:hover,
+.event-item h3 a:hover {
     text-decoration: underline;
-  }
+}
   
-  .news-info p {
+.news-info p {
     margin: 5px 0;
     color: #555;
-  }
+}
   
-  .read-more {
+.read-more {
     display: inline-block;
     margin-top: 10px;
     color: #fff;
@@ -851,73 +822,74 @@ nav ul li a:hover {
     border-radius: 5px;
     text-decoration: none;
     font-size: 0.9rem;
-  }
+}
   
-  .read-more:hover {
+.read-more:hover {
     background-color: #0056b3;
-  }
+}
   
-  .event-date-time {
+.event-date-time {
     font-weight: bold;
     color: #333;
     margin-bottom: 5px;
-  }
+}
   
-  .event-details {
+.event-details {
     color: #555;
     font-size: 0.9rem;
-  }
+}
   
-  .pagination {
+.pagination {
     text-align: center;
     margin-top: 20px;
-  }
+}
   
-  .pagination a {
+.pagination a {
     text-decoration: none;
     margin: 0 5px;
     color: #007BFF;
-  }
+}
   
-  .pagination a:hover {
+.pagination a:hover {
     text-decoration: underline;
-  }
+}
   
-  /* Style for Previous and Next Buttons */
+  
 .nav-button-news {
-    background-color: #bb2719; /* Istanbul's vibrant blue */
-    color: #fff; /* White text */
-    border: none; /* Remove default borders */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px 20px; /* Comfortable padding */
-    font-size: 1rem; /* Readable font size */
-    font-family: Arial, sans-serif; /* Clean, modern font */
-    cursor: pointer; /* Pointer cursor on hover */
-    margin: 10px; /* Space between buttons */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
-  }
+    background-color: #bb2719; 
+    color: #fff; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    font-size: 1rem; 
+    font-family: Arial, sans-serif; 
+    cursor: pointer; 
+    margin: 10px; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
   
-  .nav-button-news:hover {
-    background-color: #a30000; /* Darker blue on hover */
-    transform: scale(1.05); /* Slight zoom effect */
-  }
+.nav-button-news:hover {
+    background-color: #a30000; 
+    transform: scale(1.05); 
+}
   
   
-  /* Align buttons in the center */
-  .pagination {
+   
+.pagination {
     display: flex;
     justify-content: center; /* Center the buttons horizontally */
     align-items: center; /* Vertically align buttons */
     margin-top: 20px; /* Add spacing above the buttons */
   }
   
-  
   /* NEWS PAGES 1,2,3 */
 /* News Article Styles */
-
+.content-area{
+    padding-top: 132px;
+}
 .news-article {
     max-width: 800px;
-    margin: 40px auto; /* Center align and add spacing */
+    margin: 40px auto; 
     padding: 40px;
     background-color: #f9f9f9;
     border-radius: 10px;
@@ -949,7 +921,7 @@ nav ul li a:hover {
 .return-button-container {
     display: flex;
     justify-content: center;
-    margin-top: 20px; /* Adds space above the button */
+    margin-top: 20px; 
 }
 
 .return-button {
@@ -961,12 +933,12 @@ nav ul li a:hover {
     font-size: 1rem;
     font-family: Arial, sans-serif;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
 .return-button:hover {
     background-color: #a30000; 
-    transform: scale(1.05); /* Slight zoom effect */
+    transform: scale(1.05); 
 }
 .events-booking {
     margin-top: 20px;
@@ -991,135 +963,8 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 .news-events{
-    background-color: #eeb0b0;
+    background-color: #e6efff;
 }
-
-/* Default Styles (Desktop First) */
-@media screen and (max-width: 1200px) {
-    /* Adjust content margins and padding */
-    .content {
-        margin: 10px;
-        padding: 15px;
-        gap: 15px;
-    }
-
-    .news-previews h2,
-    .upcoming-events h2 {
-        font-size: 1.5rem;
-    }
-    
-    .title h1 {
-        font-size: 2.5rem;
-    }
-
-    .title p {
-        font-size: 1.2rem;
-    }
-}
-
-@media screen and (max-width: 992px) {
-    /* Tablet layout adjustments */
-    .content {
-        flex-direction: column; /* Stack columns */
-        gap: 20px;
-    }
-
-    .news-previews, 
-    .upcoming-events {
-        flex: unset; /* Reset flex values */
-        margin-bottom: 20px;
-    }
-
-    .title h1 {
-        font-size: 2rem;
-    }
-
-    .title p {
-        font-size: 1rem;
-    }
-
-    .pagination {
-        flex-direction: column; /* Stack buttons vertically */
-        gap: 10px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    /* Mobile-friendly layout */
-    #start {
-        height: 80vh; /* Reduce hero section height */
-    }
-
-    .title {
-        padding: 10px 20px;
-        border-radius: 5px;
-    }
-
-    .title h1 {
-        font-size: 1.8rem;
-    }
-
-    .title p {
-        font-size: 0.9rem;
-    }
-
-    .content {
-        margin: 5px;
-        padding: 10px;
-    }
-
-    .news-previews h2,
-    .upcoming-events h2 {
-        font-size: 1.2rem;
-    }
-
-    .event-item h3 a {
-        font-size: 1rem;
-    }
-
-    .nav-button-news {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
-
-    .return-button {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
-}
-
-@media screen and (max-width: 576px) {
-    /* Smaller Mobile Screens */
-    .title h1 {
-        font-size: 1.5rem;
-    }
-
-    .title p {
-        font-size: 0.8rem;
-    }
-
-    .event-item h3 a {
-        font-size: 0.9rem;
-    }
-
-    .news-image {
-        height: 200px; /* Reduce image height for small screens */
-    }
-
-    .content-area {
-        padding: 10px;
-    }
-
-    .news-article {
-        padding: 20px;
-    }
-
-    .return-button {
-        padding: 6px 12px;
-        font-size: 0.8rem;
-    }
-}
-/*End of NEWS pages*/
 #cuisine {
     text-align: center;
     margin: 20px;
@@ -1139,7 +984,7 @@ nav ul li a:hover {
 .cuisine-container {
     display: flex;
     flex-direction: column;
-    gap: 30px; /* Space between rows */
+    gap: 30px; 
     align-items: center;
     width: 100%;
 }
@@ -1150,7 +995,7 @@ nav ul li a:hover {
     font-family: 'Arial', sans-serif; 
     font-weight: bold; 
     color: #444;
-    border-bottom: 2px solid #ccc; /* Add a line below for style */
+    border-bottom: 2px solid #ccc; 
     padding-bottom: 10px; 
 }
 .item {
@@ -1159,21 +1004,21 @@ nav ul li a:hover {
     align-items: center;
     max-width: 100%; 
     text-align: left;
-    flex-wrap: wrap; /* Wrap content for smaller screens */
+    flex-wrap: wrap; 
     padding: 0 20px; 
     margin: 40px 0; 
 }
 
-/* Ensure images are larger and maintain aspect ratio */
+
 .item img {
-    width: 400px; /* Adjust image width */
+    width: 400px; 
     height: 300px;
     border-radius: 8px;
 }
 
 
 .info {
-    flex: 1; /* Text fills the remaining space */
+    flex: 1; 
     font-size: 1.2rem;
 }
 
@@ -1188,8 +1033,8 @@ nav ul li a:hover {
     line-height: 1.6;
 }
 .item img:hover {
-    transform: scale(1.2); /* Slightly enlarge the image */
-    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2); /* Add a shadow */
+    transform: scale(1.2); 
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2); 
 }
 #services {
     padding: 20px;
