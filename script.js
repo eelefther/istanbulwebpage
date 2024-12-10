@@ -26,15 +26,9 @@ images.forEach((src) => {
   img.src = src;
 });
 
-<<<<<<< Updated upstream
-// JavaScript to toggle the menu visibility on mobile
-document.getElementById('menu').addEventListener('click', function() {
-    document.getElementById('nav-list').classList.toggle('show');
-=======
 //menu for smaller screen sizes
 document.getElementById('menu').addEventListener('click', function() {
   document.getElementById('nav-list').classList.toggle('show');
->>>>>>> Stashed changes
 });
 
 // news preview

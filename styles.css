@@ -69,65 +69,64 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Responsive Design - For smaller screens */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column; /* Stack logo and h2 vertically */
-        align-items: center; /* Center items horizontally */
-        padding: 1rem; /* Adjust padding */
-    }
-
-    nav {
-        width: 100%; /* Take full width */
-        justify-content: center; /* Center the nav items */
-    }
-
-    nav ul {
-        flex-direction: column; /* Stack nav items vertically */
-        width: 100%; /* Full width of the screen */
-        align-items: center; /* Center the list items */
-    }
-
-    nav ul li {
-        margin: 0.5rem 0; /* Space out the nav items */
-    }
-}
-
-/* Hamburger Menu */
-.hamburger {
-    display: none; /* Hidden by default */
+.menu {
+    display: none; 
     font-size: 30px;
     cursor: pointer;
     color: #fff;
     padding: 10px;
 }
 
-/* Display hamburger on small screens */
+
 @media (max-width: 768px) {
-    .hamburger {
-        display: block; /* Show hamburger icon */
+    header {
+        flex-direction: row;
+        justify-content: space-between; 
+        align-items: center; 
+        flex-wrap: nowrap;
+        padding: 1rem; 
+        position: static;
+    }
+
+    header h2{
+        display:none;
+    }
+    
+    #logo{
+        margin-right: auto;
+    }
+
+    .menu {
+        display: block;         
+    }
+
+    nav {
+        width: 100%; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     nav ul {
-        display: none; /* Hide nav items by default */
-        flex-direction: column; /* Stack items vertically */
-        width: 100%;
-        align-items: center;
+        display: none;
+        flex-direction: column; 
+        width: 100%; 
         margin-top: 10px;
-        
     }
 
     nav ul.show {
-        display: flex; /* Show nav items when the menu is toggled */
+        display: flex;
+        align-items: end; 
     }
 
     nav ul li {
-        margin: 0.5rem 0; /* Space out nav items */
-    }
+        margin: 0.5rem 0; 
+    }    
 }
 
 
-/* GALLERY */
+/* Ensure image gallery section is positioned correctly */
+/* Fullscreen Image Gallery */
 #gallery {
     position: relative;  
     width: 100%;        
@@ -143,10 +142,9 @@ nav ul li a:hover {
     text-align: center;
     color: #fff;
     z-index: 2;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
     padding: 20px 40px;
     border-radius: 10px;
-    max-width: 100%;   /* Prevent the hero from overflowing horizontally */
     box-sizing: border-box;
 }
 
@@ -167,14 +165,6 @@ nav ul li a:hover {
 
 .gallery {
     position: relative;
-    max-width: 100%;
-    margin: auto;
-    aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio */
-    overflow: hidden;
-}
-
-.gallery {
-    position: relative;
     margin: auto;
     aspect-ratio: 16 / 9;  
     overflow: hidden;
@@ -187,7 +177,6 @@ nav ul li a:hover {
     object-fit: cover;      
     object-position: center; 
 }
-
 
 .nav-button {
     background-color: #bb2719;
@@ -242,13 +231,7 @@ nav ul li a:hover {
     transform: scale(1.05)
 }
 
-
-#events {
-    padding: 2rem 1rem;
-    background-color: #f9f9f9;
-    text-align: center;
-}
-
+@media (max-width: 1200px) {
 
     .gallery-title h1 {
         font-size: 2.5rem;
@@ -434,7 +417,6 @@ nav ul li a:hover {
     transform: scale(1.05)
 }
 
-/* Media query for larger screens */
 @media (min-width: 1200px) {
     .sightseeing-container {
         padding: 0 50px;
@@ -444,13 +426,6 @@ nav ul li a:hover {
 @media (max-width: 768px) {
     .sightseeing-card {
         flex-basis: calc(50% - 20px); /*takes half of the container's width -20px for margin between*/
-    }
-    .overlay h3 {
-        font-size: 1.2em;
-    }
-    
-    .overlay p {
-        font-size: 1em;
     }
 }
 
